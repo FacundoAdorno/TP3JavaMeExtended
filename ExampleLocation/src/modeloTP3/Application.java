@@ -10,7 +10,7 @@ import javax.microedition.location.QualifiedCoordinates;
 import javax.microedition.midlet.MIDlet;
 import javax.microedition.midlet.MIDletStateChangeException;
 
-public class ApplicationMIDlet extends MIDlet  implements ObserverLocation{
+public class Application extends MIDlet  implements ObserverLocation{
 	private LocationListenerCollaborator locationListenerCol = new LocationListenerCollaborator();
 	private User user = new User();
 	
@@ -31,7 +31,7 @@ public class ApplicationMIDlet extends MIDlet  implements ObserverLocation{
 	public void notifyLocationUpdated(Location location) {
 		// Aca va a estar el comportamiento que actualiza al contexto del usuario y a la pantalla
 		if(!(location == null)){
-			user.setPositionContextValue(location);
+			user.setContextFeature("position", location);
 			
 			QualifiedCoordinates coordinates = location.getQualifiedCoordinates();
 			String textCoordinate = "Latitud: " + coordinates.getLatitude() + " Longitud: " + coordinates.getLongitude();
@@ -45,7 +45,7 @@ public class ApplicationMIDlet extends MIDlet  implements ObserverLocation{
 	private TextBox locationDescriptor;
 	private LocationProvider locationProvider;
 	
-	public ApplicationMIDlet() throws LocationException{
+	public Application() throws LocationException{
 		setLocationProvider(LocationProvider.getInstance(new Criteria()));
 		getLocationProvider().setLocationListener(getLocationListenerCol(), 1, -1, -1);
 		getLocationListenerCol().addObserver(this);
