@@ -1,8 +1,7 @@
 MIDlet-Version: 1.0.0
 MIDlet-Vendor: MIDlet Suite Vendor
 MIDlet-Jar-URL: ExampleLocation.jar
-MIDlet-2: ApplicationMIDlet,,modeloTP3.Application
 MicroEdition-Configuration: CLDC-1.0
-MIDlet-1: ExampleLocationMIDlet,,ExampleLocationMIDlet
+MIDlet-1: ApplicationMIDlet,,modeloTP3.Application
 MicroEdition-Profile: MIDP-2.1
 MIDlet-Name: ExampleLocation MIDlet Suite
